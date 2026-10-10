@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebForge | Web development team</title>
+    <meta
+      name="description"
+      content="WebForge is a small team of three building fast, accessible React websites for startups and small businesses."
+    />
+    <meta property="og:title" content="WebForge | Web development team" />
+    <meta
+      property="og:description"
+      content="We build fast, accessible React websites for startups and small businesses."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0c0a09" />
+    <!-- Sets the theme BEFORE first paint so there's no light/dark flash.
+         Keep the storage key in sync with src/hooks/useTheme.ts -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("webforge-theme");
+          if (t !== "light" && t !== "dark") {
+            t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          }
+          document.documentElement.classList.toggle("dark", t === "dark");
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
