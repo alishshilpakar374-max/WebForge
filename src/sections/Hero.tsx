@@ -8,9 +8,9 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center overflow-hidden pt-16"
     >
-      {/* Ember glow */}
+      {/* Center glow */}
       <div
-        className="pointer-events-none absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-1/2 hidden h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-3xl dark:block"
         aria-hidden="true"
       />
 

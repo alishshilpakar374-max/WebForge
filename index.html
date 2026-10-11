@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/jpeg" href="/favicon.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebForge | Web development team</title>
     <meta
@@ -21,9 +21,11 @@
     <script>
       (function () {
         try {
-          var t = localStorage.getItem("webforge-theme");
+          let t = localStorage.getItem("webforge-theme");
           if (t !== "light" && t !== "dark") {
-            t = matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+            t = matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
           }
           document.documentElement.classList.toggle("dark", t === "dark");
         } catch (e) {

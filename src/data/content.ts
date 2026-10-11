@@ -9,13 +9,16 @@ import {
   FaReact,
 } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { nanoid } from "@reduxjs/toolkit";
 import type { Project, Service, Skill, Social, TeamMember } from "../types";
+import { WebForge, Restuarant, GH } from "../assets/img";
 
 // ⚠️ PLACEHOLDERS: every value in this file is meant to be replaced with real info.
 
 export const site = {
+  logo: WebForge,
   name: "WebForge",
-  email: "hello@webforge.dev", // use a shared team inbox, not one person's email
+  email: "webforge374@gmail.com",
 };
 
 export const services: Service[] = [
@@ -44,28 +47,35 @@ export const services: Service[] = [
 
 export const projects: Project[] = [
   {
-    id: "local-business",
-    title: "Local Business Website",
+    id: nanoid(),
+    image: GH,
+    title: " Guest House",
     description:
-      "A responsive multi-section website with a contact form and SEO-friendly structure.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    repoUrl: "https://github.com/",
-    liveUrl: "https://example.com/",
+      "A heritage-inspired guest house website featuring room listings, booking options, dining, amenities, a gallery, and WhatsApp booking integration.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit"],
+    repoUrl: "https://github.com/alishshilpakar374-max/Demo-GH",
+    liveUrl: "https://demo-gh.vercel.app/",
   },
   {
-    id: "restaurant",
-    title: "Restaurant Landing Page",
+    id: nanoid(),
+
+    title: "Personal Portfolio",
     description:
-      "A mobile-first landing page featuring a menu, gallery and reservation call-to-action.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    repoUrl: "https://github.com/",
+      "A responsive developer portfolio showcasing projects, technical skills, and contact information with a modern design and email contact integration.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "EmailJS", "Vercel"],
+    repoUrl: "https://github.com/YOUR_USERNAME/YOUR_PORTFOLIO_REPO",
+    liveUrl: "https://alishshilpakar.vercel.app/",
   },
   {
-    id: "dashboard",
-    title: "Analytics Dashboard UI",
+    id: nanoid(),
+    image: Restuarant,
+    title: "Waypoint Restaurant",
     description:
-      "A clean dashboard interface with reusable cards, charts and a light/dark theme.",
-    tags: ["React", "Tailwind"],
+      "A modern restaurant website designed to showcase the menu, highlight the dining experience, and make it easy for customers to explore the restaurant and get in touch.",
+
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    repoUrl: "https://github.com/alishshilpakar374-max/ResturantApp",
+    liveUrl: "https://restaurant-webforge.vercel.app/",
   },
 ];
 
@@ -89,24 +99,32 @@ export const socials: Social[] = [
 
 export const team: TeamMember[] = [
   {
-    id: "pain",
-    name: "Pain",
-    role: "Front-End Developer",
-    bio: "Turns designs into fast, accessible React interfaces.",
+    id: nanoid(),
+    name: "Alish Shilpakar",
+    role: "Full-Stack Developer / Designer",
+    bio: "Builds modern, responsive web applications with a focus on clean design and user experience.",
     links: [{ label: "GitHub", href: "https://github.com/", icon: FaGithub }],
   },
   {
-    id: "member-2",
-    name: "Teammate Two",
-    role: "Role Title",
-    bio: "One short sentence about what they do best.",
-    links: [{ label: "GitHub", href: "https://github.com/", icon: FaGithub }],
+    id: nanoid(),
+    name: "Sameer Gapi",
+    role: "Manager / Designer",
+    bio: "Coordinates projects and creates thoughtful designs that balance business goals with user needs.",
+    links: [
+      { label: "GitHub", href: "https://github.com/tobi779", icon: FaGithub },
+    ],
   },
   {
-    id: "member-3",
-    name: "Teammate Three",
-    role: "Role Title",
-    bio: "One short sentence about what they do best.",
-    links: [{ label: "LinkedIn", href: "https://linkedin.com/", icon: FaLinkedin }],
+    id: nanoid(),
+    name: "Bishal Kawan",
+    role: "Full-Stack Developer / Designer",
+    bio: "Develops functional web experiences by combining reliable code with intuitive, user-friendly design.",
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/bishalkawan99",
+        icon: FaGithub,
+      },
+    ],
   },
 ];
