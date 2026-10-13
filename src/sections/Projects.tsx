@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
+import ProjectStack from "../components/ProjectStack";
 import SectionHeading from "../components/SectionHeading";
 import { projects } from "../data/content";
 
@@ -7,45 +8,76 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      aria-labelledby="projects-title"
-      className="relative overflow-hidden py-20"
+      aria-label="Projects"
+      className="relative isolate overflow-hidden py-24 sm:py-28"
     >
-      {/* Background glows */}
+      {/* Background decorations */}
       <div
-        className="pointer-events-none absolute right-0 top-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl"
         aria-hidden="true"
+        className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-primary/5 blur-3xl"
       />
 
       <div
-        className="pointer-events-none absolute bottom-1/4 left-0 h-64 w-64 rounded-full bg-highlight/5 blur-3xl"
         aria-hidden="true"
+        className="pointer-events-none absolute -right-32 top-1/2 h-96 w-96 rounded-full bg-accent/5 blur-3xl"
       />
 
-      <div className="container-page relative z-10">
-        {/* Section heading */}
+      {/* Phone and tablet */}
+      <div className="container-page relative z-10 block md:hidden">
         <SectionHeading
-          id="projects-title"
-          eyebrow="// featured work"
-          title="Projects that make an impact."
-          description="A selection of our recent work, from web applications to innovative tools that solve real-world problems."
+          id="projects-mobile-title"
+          eyebrow="// selected work"
+          title="Things we've built"
+          description="A selection of projects showcasing our work, skills, and approach to solving real problems."
         />
 
-        {/* Projects grid */}
-        <div className="mt-12 grid grid-cols-1 items-stretch gap-8 md:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
         </div>
 
-        {/* View all projects */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 flex justify-center">
           <a
-            href="https://github.com/alishshilpakar374-max?tab=repositories"
+            href="https://github.com/YOUR_USERNAME"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
           >
             View All Projects
-            <ArrowUpRight className="h-5 w-5" />
+            <ArrowUpRight
+              size={16}
+              className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="container-page relative z-10 hidden lg:block">
+        <SectionHeading
+          id="projects-desktop-title"
+          eyebrow="// selected work"
+          title="Things we've built"
+          description="A selection of projects showcasing our work, skills, and approach to solving real problems."
+        />
+
+        <div className="mt-12">
+          <ProjectStack projects={projects} />
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <a
+            href="https://github.com/YOUR_USERNAME"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 rounded-xl border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+          >
+            View All Projects
+            <ArrowUpRight
+              size={16}
+              className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
           </a>
         </div>
       </div>
